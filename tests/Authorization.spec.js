@@ -32,5 +32,5 @@ test('Authorization', async ({ page }) => {
   // Fill #sms-modal__form-digit-3
   await page.locator('#sms-modal__form-digit-3').fill('1');
   await expect(page).toHaveURL('https://next-dev.technodom.kz/my-account/overview');
-
+  
 });

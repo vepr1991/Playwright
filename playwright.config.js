@@ -35,15 +35,15 @@ const config = {
   reporter: [
     ['list'],
     ['playwright-qase-reporter',
-        {
-            apiToken: '4f889bf3bfb6aedfc53d35b6f1cd44b8602f69d5',
-            projectCode: 'MB',
-            runComplete: true,
-            basePath: 'https://api.qase.io/v1',
-            logging: true,
-            uploadAttachments: true,
-        }],
-],
+      {
+        apiToken: '4f889bf3bfb6aedfc53d35b6f1cd44b8602f69d5',
+        projectCode: 'MB',
+        runComplete: true,
+        basePath: 'https://api.qase.io/v1',
+        logging: true,
+        uploadAttachments: true,
+      }],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
@@ -59,9 +59,15 @@ const config = {
   projects: [
     {
       name: 'chromium',
-      use: {
-        ...devices['Desktop Chrome'],
-      },
+      use: { ...devices['Desktop Chrome'] },
+    },
+    // {
+    //  name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    //  },
+    {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
     },
     /* Test against mobile viewports. */
     // {
@@ -71,11 +77,11 @@ const config = {
     //   },
     // },
     // {
-    //   name: 'Mobile Safari',
-    //   use: {
-    //     ...devices['iPhone 12'],
-    //   },
-    // },
+    // name: 'Mobile Safari',
+    //  use: {
+    // ...devices['iPhone 12'],
+    //    },
+    //  },
 
     /* Test against branded browsers. */
     // {
